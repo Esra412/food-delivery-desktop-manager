@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --app-bg: #070c11;
+  --app-surface: #111827;
+  --app-card: #161b22;
+  --app-border: #2b3b4f;
+  --app-text: #f8fafc;
+  --app-muted: #b7c0cc;
+  --accent: #16c28b;
+  --accent-fail: #f00000;
+  --accent-rgb: 22, 194, 139;
+  --accent-muted: rgba(22, 194, 139, 0.13);
+  --border-radius: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--app-bg);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: var(--app-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .app-layout {
+    display: block;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+  }
+
+  .app-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+    padding: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .app-sidebar > div:first-child {
+    display: none;
+  }
+
+  .app-sidebar-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .app-sidebar-nav a {
+    min-width: 0;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .app-sidebar-support {
+    display: none;
+  }
+
+  .app-main {
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .app-main header {
+    position: relative;
+    padding: 1rem;
+  }
+
+  .app-main header [class~="w-[360px]"] {
+    width: 100%;
+  }
+
+  .app-main > div,
+  .app-main > section {
+    max-width: 100%;
+  }
+
+  .app-main .overflow-x-auto {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-sidebar-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .app-main header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-main [class~="px-10"],
+  .app-main [class~="px-8"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .app-main [class~="py-10"],
+  .app-main [class~="py-8"] {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
